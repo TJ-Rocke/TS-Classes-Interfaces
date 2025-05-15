@@ -48,6 +48,25 @@ class Employee extends User {
   // can add other methods and properties
   work() {
     // ...
-    this.
+    this._firstName;
   }
+}
+
+// meant to only act as base class that other classes should inherit from. not able to instantiate abstract classes
+abstract class UIElement {
+  constructor(public identifier: string) {}
+
+  clone(targetLocation: string) {
+    // logic to duplicate the UI element
+  }
+}
+
+// let uiElement = new UIElement(); <= creates error because abstract classes are meant to only act as base class that other classes should inherit from. not able to instantiate abstract classes
+
+class SideDrawerElement extends UIElement {
+  constructor(public identifier: string, public position: "left" | "right") {
+    super(identifier);
+  }
+
+  // ...
 }
