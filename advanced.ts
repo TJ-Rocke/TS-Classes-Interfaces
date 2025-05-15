@@ -1,5 +1,5 @@
 class User {
-  private _firstName: string = "";
+  protected _firstName: string = ""; // using 'protected' keyword does give extending classes access
   private _lastName: string = "";
   // constructor(private firstName: string, private lastName: string) {}
 
@@ -48,5 +48,6 @@ class Employee extends User {
   // can add other methods and properties
   work() {
     // ...
+    this.
   }
 }
