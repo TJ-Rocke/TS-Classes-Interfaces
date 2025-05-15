@@ -52,3 +52,20 @@ user = {
     // etc...
   },
 };
+
+// IMPLEMENTING INTERFACES BELOW
+
+// to force use of certain property and method names with 'implements' keyword
+// 'implement' keyword forces a class to implement the structure of the interface you are implementing
+// can implement multiple interfaces by separating with commas
+class AuthenticatableUser implements Authenticatable {
+  constructor(public email: string, public password: string) {}
+
+  login() {
+    // ...
+  }
+
+  logout() {
+    // ...
+  }
+}
