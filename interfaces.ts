@@ -30,10 +30,10 @@ interface Authenticatable {
   logout(): void;
 }
 
-// merging is useful because
-interface Authenticatable {
-  role: string;
-}
+// merging is useful if you are working with interfaces that come from another file or some library (where you want to extend something you don't directly control)
+// interface Authenticatable {
+//   role: string;
+// }
 
 // HOW TO USE AN INTERFACE BELOW
 let user: Authenticatable;
@@ -41,7 +41,7 @@ let user: Authenticatable;
 user = {
   email: "test@example.com",
   password: "abc1",
-  role: "admin",
+  // role: "admin",
   login() {
     // reach out to database
     // check credentials
@@ -58,6 +58,8 @@ user = {
 // to force use of certain property and method names with 'implements' keyword
 // 'implement' keyword forces a class to implement the structure of the interface you are implementing
 // can implement multiple interfaces by separating with commas
+// can have more properties than defined by the interface
+// but must have at least the properties and methods defined by the interface
 class AuthenticatableUser implements Authenticatable {
   constructor(public email: string, public password: string) {}
 
