@@ -36,3 +36,17 @@ const tony = new User();
 tony.firstName = "Tony"; // firstName and lastName can be accessed and set because the setter isn't set to private
 tony.lastName = "Gambino";
 console.log(tony.fullName);
+
+// Inheritance
+
+// extends keyword to define a base class the 'Employee' class can build up on. It inherits all the properties of User class and can add new properties of its own
+class Employee extends User {
+  constructor(public jobTitle: string) {
+    super(); // super must be called anytime a class inherits from another class. it ensures the constructor of the base class is getting called as well. if base class has parameters, they have to be passed into the super constructor as well
+    // super.firstName = "Al Capone"; possible within the Employee class
+  }
+  // can add other methods and properties
+  work() {
+    // ...
+  }
+}
