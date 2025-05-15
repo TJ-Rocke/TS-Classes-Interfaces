@@ -77,3 +77,9 @@ class AuthenticatableUser implements Authenticatable {
 function authenticate(user: Authenticatable) {
   user.login();
 }
+
+// EXTENDING INTERFACES
+// difference from declaration merging - were not touching the original interface but creating a new interface that builds up on the base interface
+interface AuthenticatableAdmin extends Authenticatable {
+  role: "admin" | "superadmin";
+}
