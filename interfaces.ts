@@ -71,3 +71,9 @@ class AuthenticatableUser implements Authenticatable {
     // ...
   }
 }
+
+// ...
+// can use Authenticatable as a type because it will force anyonew who uses the authenticate function to pass a User obj to the funtion that implements the Authenticatable interface. Guaranteed to get a User object that has a login method because its defined by the Authenticatble interface
+function authenticate(user: Authenticatable) {
+  user.login();
+}
